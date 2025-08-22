@@ -1,5 +1,6 @@
 import { useAuth } from "@/src/hooks/useAuth";
-import { useNavigation } from "@react-navigation/native";
+import { AuthStackParamList } from "@/src/types/auth";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { Alert, TouchableOpacity } from "react-native";
 import {
@@ -12,11 +13,12 @@ import {
 import LoginButton from "../components/LoginButton";
 
 export default function LoginScreen() {
-  const navigation = useNavigation<any>();
+ const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
+
 
   const { login, loading, error } = useAuth();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+const [username, setUsername] = useState<string>("");
+const [password, setPassword] = useState<string>("");
 
   const handleLogin = async () => {
     if (!username || !password) {

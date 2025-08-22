@@ -20,9 +20,10 @@ interface FeedItem {
 }
 
 export default function FeedScreen() {
-  const [comments, setComments] = useState<FeedItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [refreshing, setRefreshing] = useState(false);
+const [comments, setComments] = useState<FeedItem[]>([]);
+const [loading, setLoading] = useState<boolean>(true);
+const [refreshing, setRefreshing] = useState<boolean>(false);
+
 
   const flatListRef = useRef<FlatList>(null);
   const insets = useSafeAreaInsets();
@@ -70,7 +71,7 @@ export default function FeedScreen() {
 
   return (
     <Container>
-      <FlatList
+      <FlatList<FeedItem>
         ref={flatListRef}
         data={comments}
         keyExtractor={(item) => item.id}

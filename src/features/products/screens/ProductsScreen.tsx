@@ -33,14 +33,14 @@ const LIMIT = 10;
 
 export default function ProductsScreen() {
   const navigation = useNavigation<ProductsScreenNavigationProp>();
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [refreshing, setRefreshing] = useState(false);
-  const [page, setPage] = useState(0);
-  const [hasMore, setHasMore] = useState(true);
+const [products, setProducts] = useState<Product[]>([]);
+const [loading, setLoading] = useState<boolean>(false);
+const [refreshing, setRefreshing] = useState<boolean>(false);
+const [page, setPage] = useState<number>(0);
+const [hasMore, setHasMore] = useState<boolean>(true);
 
-  const [searchQuery, setSearchQuery] = useState("");
-  const [priceFilter, setPriceFilter] = useState<[number, number] | null>(null);
+const [searchQuery, setSearchQuery] = useState<string>("");
+const [priceFilter, setPriceFilter] = useState<[number, number] | null>(null);
 
   const loadProducts = async () => {
     if (!hasMore || loading) return;
@@ -80,7 +80,7 @@ export default function ProductsScreen() {
     loadProducts();
   }, []);
 
-  const handleBuy = (product: any) => {
+  const handleBuy = (product: Product) => {
     navigation.navigate("Checkout", { product });
   };
 
@@ -94,7 +94,7 @@ export default function ProductsScreen() {
     return matchesSearch && matchesPrice;
   });
 
-  const renderItem = ({ item }: { item: any }) => (
+  const renderItem = ({ item }: { item: Product  }) => (
     <Card>
       <ImageWrapper>
         <ProductImage source={{ uri: item.thumbnail }} />
@@ -140,7 +140,7 @@ export default function ProductsScreen() {
         </FilterButton>
       </FilterRow>
 
-      <FlatList
+      <FlatList<Product>
         data={filteredProducts}
         keyExtractor={(item) => item.id.toString()}
         renderItem={renderItem}

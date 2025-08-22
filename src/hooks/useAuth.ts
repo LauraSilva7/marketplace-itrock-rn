@@ -2,17 +2,18 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout } from "../store/slices/userSlice";
-import { RootState } from "../store/store";
+import { AppDispatch, RootState } from "../store/store";
+import { UseAuthReturn } from "../types/auth";
 
 export const STORAGE_KEYS = {
   USER_TOKEN: "userToken",
   USER_NAME: "userName",
 };
 
-export const useAuth = () => {
-  const dispatch = useDispatch();
+export const useAuth = (): UseAuthReturn => {
+  const dispatch = useDispatch<AppDispatch>();
   const isLoggedIn = useSelector((state: RootState) => state.user.isLoggedIn);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {

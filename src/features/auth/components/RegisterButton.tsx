@@ -6,13 +6,16 @@ type Props = {
   onPress: () => void;
 };
 
-export default function RegisterButton({ title = "Registrar", onPress }: Props) {
+const RegisterButton: React.FC<Props> = ({ title = "Registrar", onPress }) => {
   return (
     <ButtonContainer onPress={onPress}>
       <ButtonText>{title}</ButtonText>
     </ButtonContainer>
   );
-}
+};
+
+export default RegisterButton;
+
 
 const ButtonContainer = styled.TouchableOpacity`
   background-color: ${({ theme }) => theme.colors.accent};

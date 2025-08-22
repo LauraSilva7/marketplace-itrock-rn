@@ -7,13 +7,16 @@ type Props = {
   disabled?: boolean;
 };
 
-export default function LoginButton({ title = "Ingresar", onPress, disabled }: Props) {
+const LoginButton: React.FC<Props> = ({ title = "Ingresar", onPress, disabled }) => {
   return (
     <ButtonContainer onPress={onPress} disabled={disabled}>
       <ButtonText>{title}</ButtonText>
     </ButtonContainer>
   );
-}
+};
+
+export default LoginButton;
+
 
 const ButtonContainer = styled.TouchableOpacity<{ disabled?: boolean }>`
   background-color: ${({ theme, disabled }) =>

@@ -5,8 +5,15 @@ export interface Product {
   description: string;
   category: string;
   image: string;
+  thumbnail: string;
   rating: {
     rate: number;
     count: number;
   };
+}
+export interface ProductsResponse {
+  products: Product[];
+  total: number;
+  skip: number;
+  limit: number;
 }

@@ -31,13 +31,14 @@ export default function CheckoutScreen() {
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const theme = useTheme();
 
-  const [cardNumber, setCardNumber] = useState("");
-  const [cardHolder, setCardHolder] = useState("");
-  const [expiry, setExpiry] = useState("");
-  const [cvv, setCvv] = useState("");
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [snackbarVisible, setSnackbarVisible] = useState(false);
-  const [snackbarMessage, setSnackbarMessage] = useState("");
+const [cardNumber, setCardNumber] = useState<string>("");
+const [cardHolder, setCardHolder] = useState<string>("");
+const [expiry, setExpiry] = useState<string>("");
+const [cvv, setCvv] = useState<string>("");
+const [isFlipped, setIsFlipped] = useState<boolean>(false);
+const [snackbarVisible, setSnackbarVisible] = useState<boolean>(false);
+const [snackbarMessage, setSnackbarMessage] = useState<string>("");
+
 
   const formatExpiry = (text: string) => {
     const cleaned = text.replace(/\D/g, "").slice(0, 4);

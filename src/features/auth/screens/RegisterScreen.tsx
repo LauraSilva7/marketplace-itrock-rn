@@ -1,7 +1,8 @@
 import { login } from "@/src/store/slices/userSlice";
 import { AppDispatch } from "@/src/store/store";
+import { AuthStackParamList } from "@/src/types/auth";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useNavigation } from "@react-navigation/native";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { Alert, TouchableOpacity } from "react-native";
 import { useDispatch } from "react-redux";
@@ -16,11 +17,13 @@ import RegisterButton from "../components/RegisterButton";
 
 export default function RegisterScreen() {
   const dispatch = useDispatch<AppDispatch>();
-  const navigation = useNavigation<any>();
+  
+const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+
+const [username, setUsername] = useState<string>("");
+const [password, setPassword] = useState<string>("");
+const [confirmPassword, setConfirmPassword] = useState<string>("");
 
   const handleRegister = async () => {
     if (!username || !password) {
