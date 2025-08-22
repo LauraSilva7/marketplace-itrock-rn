@@ -1,50 +1,64 @@
-# Welcome to your Expo app 👋
+# 📱 Challenge React Native
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicación desarrollada con **Expo + React Native**, con login básico, feed de comentarios y listado de productos con filtros.
 
-## Get started
+---
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## 🚀 Setup & Build
 
 ```bash
-npm run reset-project
-```
+# Instalar dependencias
+npm install
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+# Levantar en entorno Expo
+npm start
 
-## Learn more
+# Android
+npm run android
 
-To learn more about developing your project with Expo, look at the following resources:
+# iOS (macOS)
+npm run ios
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 🧭 Navegación
+- **RootNavigator** como punto de entrada.  
+- **Stack** inicial para manejar login → Tabs.  
+- **Bottom Tabs** con dos secciones:  
+  - **Feed** (default)  
+  - **Productos**
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
+## ✨ Funcionalidades
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 🔐 Login
+- Credenciales hardcodeadas: `admin / 1234`.  
+- Persistencia de sesión con `AsyncStorage`.  
+- Cierre de sesión desde perfil.  
+
+### 💬 Feed
+- Lista con avatar/iniciales, nombre, fecha y comentario.  
+- Pull-to-refresh y estados de carga/vacío.  
+- Datos mock en `assets/feed.json`.  
+
+### 🛒 Productos
+- Listado con imagen, título y precio.  
+- Filtros por búsqueda y rango de precio.  
+- Paginación con control de duplicados.  
+- Pull-to-refresh y estados de carga/vacío.  
+
+### 💳 Compra simulada
+- Checkout ficticio con feedback visual (snackbar).  
+
+---
+
+## 🧠 Decisiones técnicas
+- **Estado global:** Redux Toolkit (escalable y claro).  
+- **Estilos:** styled-components (estética consistente).  
+- **Datos:** mocks locales en `assets/`.  
+- Se omitió React Query por simplicidad y tiempo(fetching manual con paginación).  
+
+---
+
+## ⚠️ Limitaciones conocidas
+- Algunos `styled-components` quedaron definidos dentro de los mismos componentes (no alcanzó el tiempo para separarlos en archivos propios).  
+- No se implementó **React Query** por cuestiones de tiempo (el fetching se maneja de forma manual).  
