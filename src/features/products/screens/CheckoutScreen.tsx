@@ -27,24 +27,20 @@ type RootStackParamList = {
 };
 
 export default function CheckoutScreen() {
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const theme = useTheme();
 
-const [cardNumber, setCardNumber] = useState<string>("");
-const [cardHolder, setCardHolder] = useState<string>("");
-const [expiry, setExpiry] = useState<string>("");
-const [cvv, setCvv] = useState<string>("");
-const [isFlipped, setIsFlipped] = useState<boolean>(false);
-const [snackbarVisible, setSnackbarVisible] = useState<boolean>(false);
-const [snackbarMessage, setSnackbarMessage] = useState<string>("");
-
+  const [cardNumber, setCardNumber] = useState<string>("");
+  const [cardHolder, setCardHolder] = useState<string>("");
+  const [expiry, setExpiry] = useState<string>("");
+  const [cvv, setCvv] = useState<string>("");
+  const [isFlipped, setIsFlipped] = useState<boolean>(false);
+  const [snackbarVisible, setSnackbarVisible] = useState<boolean>(false);
+  const [snackbarMessage, setSnackbarMessage] = useState<string>("");
 
   const formatExpiry = (text: string) => {
     const cleaned = text.replace(/\D/g, "").slice(0, 4);
-    return cleaned.length >= 3
-      ? cleaned.slice(0, 2) + "/" + cleaned.slice(2)
-      : cleaned;
+    return cleaned.length >= 3 ? cleaned.slice(0, 2) + "/" + cleaned.slice(2) : cleaned;
   };
 
   const handleBuy = () => {
@@ -126,10 +122,7 @@ const [snackbarMessage, setSnackbarMessage] = useState<string>("");
 
             <FinalizeButton onPress={handleBuy} />
 
-            <CancelButton
-              title="Cancelar"
-              onPress={() => navigation.goBack()}
-            />
+            <CancelButton title="Cancelar" onPress={() => navigation.goBack()} />
           </Form>
 
           <SnackbarWrapper>

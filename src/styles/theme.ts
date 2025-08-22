@@ -1,17 +1,17 @@
 export const theme = {
   colors: {
-    primary: "#0F172A",       
-    secondary: "#1E293B",     
-    accent: "#475569",       
-    background: "#F9FAFB",   
-    card: "#FFFFFF",         
-    border: "#E2E8F0",        
-    text: "#1F2937",          
-    muted: "#6B7280",        
-    price: "#0F172A",       
-    buttonText: "#FFFFFF",   
-    highlight: "#60A5FA",    
-    success: "#1d9c52ff",  
+    primary: "#0F172A",
+    secondary: "#1E293B",
+    accent: "#475569",
+    background: "#F9FAFB",
+    card: "#FFFFFF",
+    border: "#E2E8F0",
+    text: "#1F2937",
+    muted: "#6B7280",
+    price: "#0F172A",
+    buttonText: "#FFFFFF",
+    highlight: "#60A5FA",
+    success: "#1d9c52ff",
     danger: "#dc2626",
   },
 
@@ -39,11 +39,11 @@ export const theme = {
     lg: 16,
     pill: 50,
   },
-fontFamily: {
-  regular: "Inter_400Regular",
-  semibold: "Inter_600SemiBold",
-  bold: "Inter_700Bold",
-},
+  fontFamily: {
+    regular: "Inter_400Regular",
+    semibold: "Inter_600SemiBold",
+    bold: "Inter_700Bold",
+  },
 
   fontWeights: {
     regular: "400",

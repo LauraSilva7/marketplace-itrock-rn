@@ -20,10 +20,9 @@ interface FeedItem {
 }
 
 export default function FeedScreen() {
-const [comments, setComments] = useState<FeedItem[]>([]);
-const [loading, setLoading] = useState<boolean>(true);
-const [refreshing, setRefreshing] = useState<boolean>(false);
-
+  const [comments, setComments] = useState<FeedItem[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
 
   const flatListRef = useRef<FlatList>(null);
   const insets = useSafeAreaInsets();
@@ -76,9 +75,7 @@ const [refreshing, setRefreshing] = useState<boolean>(false);
         data={comments}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
-        ListHeaderComponent={
-          <FeedHeader height={visibleHeight} onScrollDown={scrollToComments} />
-        }
+        ListHeaderComponent={<FeedHeader height={visibleHeight} onScrollDown={scrollToComments} />}
         contentContainerStyle={{ paddingBottom: 120 }}
         showsVerticalScrollIndicator={false}
         refreshing={refreshing}
@@ -122,8 +119,7 @@ const AddCommentButton = styled.TouchableOpacity`
   background-color: ${({ theme }) => theme.colors.accent};
   flex-direction: row;
   align-items: center;
-  padding: ${({ theme }) => theme.spacing.sm}px
-    ${({ theme }) => theme.spacing.md}px;
+  padding: ${({ theme }) => theme.spacing.sm}px ${({ theme }) => theme.spacing.md}px;
   border-radius: ${({ theme }) => theme.borderRadius.pill}px;
   elevation: 4;
 `;

@@ -17,7 +17,6 @@ const LoginButton: React.FC<Props> = ({ title = "Ingresar", onPress, disabled })
 
 export default LoginButton;
 
-
 const ButtonContainer = styled.TouchableOpacity<{ disabled?: boolean }>`
   background-color: ${({ theme, disabled }) =>
     disabled ? theme.colors.muted : theme.colors.accent};
@@ -26,7 +25,9 @@ const ButtonContainer = styled.TouchableOpacity<{ disabled?: boolean }>`
   align-items: center;
   width: 100%;
   opacity: ${({ disabled }) => (disabled ? 0.8 : 1)};
-  transition: background-color 0.3s ease, opacity 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    opacity 0.3s ease;
 `;
 
 const ButtonText = styled.Text`

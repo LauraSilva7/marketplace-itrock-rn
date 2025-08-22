@@ -16,7 +16,6 @@ const RegisterButton: React.FC<Props> = ({ title = "Registrar", onPress }) => {
 
 export default RegisterButton;
 
-
 const ButtonContainer = styled.TouchableOpacity`
   background-color: ${({ theme }) => theme.colors.accent};
   padding: 14px;

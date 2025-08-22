@@ -33,14 +33,14 @@ const LIMIT = 10;
 
 export default function ProductsScreen() {
   const navigation = useNavigation<ProductsScreenNavigationProp>();
-const [products, setProducts] = useState<Product[]>([]);
-const [loading, setLoading] = useState<boolean>(false);
-const [refreshing, setRefreshing] = useState<boolean>(false);
-const [page, setPage] = useState<number>(0);
-const [hasMore, setHasMore] = useState<boolean>(true);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [refreshing, setRefreshing] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(0);
+  const [hasMore, setHasMore] = useState<boolean>(true);
 
-const [searchQuery, setSearchQuery] = useState<string>("");
-const [priceFilter, setPriceFilter] = useState<[number, number] | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [priceFilter, setPriceFilter] = useState<[number, number] | null>(null);
 
   const loadProducts = async () => {
     if (!hasMore || loading) return;
@@ -85,16 +85,13 @@ const [priceFilter, setPriceFilter] = useState<[number, number] | null>(null);
   };
 
   const filteredProducts = products.filter((product) => {
-    const matchesSearch = product.title
-      .toLowerCase()
-      .includes(searchQuery.toLowerCase());
+    const matchesSearch = product.title.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesPrice =
-      !priceFilter ||
-      (product.price >= priceFilter[0] && product.price <= priceFilter[1]);
+      !priceFilter || (product.price >= priceFilter[0] && product.price <= priceFilter[1]);
     return matchesSearch && matchesPrice;
   });
 
-  const renderItem = ({ item }: { item: Product  }) => (
+  const renderItem = ({ item }: { item: Product }) => (
     <Card>
       <ImageWrapper>
         <ProductImage source={{ uri: item.thumbnail }} />
@@ -132,10 +129,7 @@ const [priceFilter, setPriceFilter] = useState<[number, number] | null>(null);
         >
           <FilterText>$20–$50</FilterText>
         </FilterButton>
-        <FilterButton
-          selected={!priceFilter}
-          onPress={() => setPriceFilter(null)}
-        >
+        <FilterButton selected={!priceFilter} onPress={() => setPriceFilter(null)}>
           <FilterText>Todos</FilterText>
         </FilterButton>
       </FilterRow>
@@ -155,9 +149,7 @@ const [priceFilter, setPriceFilter] = useState<[number, number] | null>(null);
         onEndReachedThreshold={0.5}
         refreshing={refreshing}
         onRefresh={handleRefresh}
-        ListFooterComponent={
-          loading ? <ActivityIndicator size="small" color="#313131ff" /> : null
-        }
+        ListFooterComponent={loading ? <ActivityIndicator size="small" color="#313131ff" /> : null}
         ListEmptyComponent={
           loading ? null : (
             <EmptyWrapper>

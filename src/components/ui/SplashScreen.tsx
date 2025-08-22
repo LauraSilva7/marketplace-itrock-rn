@@ -4,11 +4,7 @@ import styled from "styled-components/native";
 
 export default function SplashScreen() {
   return (
-    <Gradient
-      colors={["#0f172a", "#000"]}
-      start={{ x: 0.5, y: 0 }}
-      end={{ x: 0.5, y: 1 }}
-    >
+    <Gradient colors={["#0f172a", "#000"]} start={{ x: 0.5, y: 0 }} end={{ x: 0.5, y: 1 }}>
       <Overlay>
         <Title>COMUNIDAD</Title>
         <Subtitle>Tu espacio para compartir y descubrir</Subtitle>

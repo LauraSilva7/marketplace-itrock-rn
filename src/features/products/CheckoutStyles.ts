@@ -63,7 +63,6 @@ export const SnackbarText = styled.Text`
   text-align: center;
 `;
 
-
 export const CardContainer = styled.View`
   height: 200px;
   margin-bottom: ${({ theme }) => theme.spacing.xl}px;

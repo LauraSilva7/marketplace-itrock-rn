@@ -13,13 +13,10 @@ export default function FeedHeader({ height, onScrollDown }: Props) {
       source={require("../../../../assets/images/comunity-header.jpg")}
       style={{ height }}
     >
-      
-        <Title>COMUNIDAD</Title>
-        <CommentButton onPress={onScrollDown}>
-          <Ionicons name="chevron-down-outline" size={20} color="#fff" />
-      
-        </CommentButton>
-     
+      <Title>COMUNIDAD</Title>
+      <CommentButton onPress={onScrollDown}>
+        <Ionicons name="chevron-down-outline" size={20} color="#fff" />
+      </CommentButton>
     </Background>
   );
 }

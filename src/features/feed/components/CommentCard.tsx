@@ -9,12 +9,7 @@ interface CommentCardProps {
   comment: string;
 }
 
-export default function CommentCard({
-  fullName,
-  avatarUrl,
-  timestamp,
-  comment,
-}: CommentCardProps) {
+export default function CommentCard({ fullName, avatarUrl, timestamp, comment }: CommentCardProps) {
   const initials = fullName
     .split(" ")
     .map((n) => n[0])
@@ -36,8 +31,7 @@ export default function CommentCard({
           </AvatarWrapper>
           <Name>{fullName}</Name>
         </UserRow>
-      <Timestamp>{getRelativeTime(timestamp)}</Timestamp>
-
+        <Timestamp>{getRelativeTime(timestamp)}</Timestamp>
       </Header>
 
       <CommentText numberOfLines={2}>{comment}</CommentText>

@@ -2,7 +2,7 @@ export type AuthStackParamList = {
   Login: undefined;
   Register: undefined;
 };
- export interface UseAuthReturn {
+export interface UseAuthReturn {
   isLoggedIn: boolean;
   loading: boolean;
   login: (username: string, password: string) => Promise<void>;

@@ -11,8 +11,6 @@ export default function RootNavigator() {
   if (loading) return <SplashScreen />;
 
   return (
-    <NavigationContainer>
-      {isLoggedIn ? <MainTabNavigator /> : <AuthStack />}
-    </NavigationContainer>
+    <NavigationContainer>{isLoggedIn ? <MainTabNavigator /> : <AuthStack />}</NavigationContainer>
   );
 }

@@ -63,19 +63,13 @@ export default function MainTabNavigator() {
         },
       })}
     >
-      <Tab.Screen
-        name="Feed"
-        component={FeedScreen}
-        options={{ tabBarLabel: "Comunidad" }}
-      />
+      <Tab.Screen name="Feed" component={FeedScreen} options={{ tabBarLabel: "Comunidad" }} />
       <Tab.Screen
         name="ProductsStack"
         component={ProductsStack}
         options={({ route }) => ({
           headerShown: getTabBarVisibility(route),
-          tabBarStyle: getTabBarVisibility(route)
-            ? undefined
-            : { display: "none" },
+          tabBarStyle: getTabBarVisibility(route) ? undefined : { display: "none" },
           headerTitle: "Tienda",
           tabBarLabel: "Tienda",
         })}

@@ -8,20 +8,16 @@ export default function ProfileButton() {
   const { logout } = useAuth();
 
   const handleLogout = () => {
-    Alert.alert(
-      "Cerrar sesión",
-      "¿Estás segura que querés cerrar sesión?",
-      [
-        { text: "Cancelar", style: "cancel" },
-        {
-          text: "Cerrar sesión",
-          style: "destructive",
-          onPress: async () => {
-            await logout();
-          },
+    Alert.alert("Cerrar sesión", "¿Estás segura que querés cerrar sesión?", [
+      { text: "Cancelar", style: "cancel" },
+      {
+        text: "Cerrar sesión",
+        style: "destructive",
+        onPress: async () => {
+          await logout();
         },
-      ]
-    );
+      },
+    ]);
   };
 
   return (

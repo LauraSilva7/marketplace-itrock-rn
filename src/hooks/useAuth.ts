@@ -55,8 +55,9 @@ export const useAuth = (): UseAuthReturn => {
         throw new Error("Credenciales inválidas");
       }
     } catch (err) {
-      setError("Error al iniciar sesión");
-      console.error(err);
+      const message = err instanceof Error ? err.message : "Error al iniciar sesión";
+      setError(message);
+      throw err;
     }
   };
 

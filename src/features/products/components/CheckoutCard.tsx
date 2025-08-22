@@ -1,16 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import { Animated, Easing } from "react-native";
 import {
-    AnimatedCard,
-    CardContainer,
-    CardHolder,
-    CardNumber,
-    CardRow,
-    CardType,
-    CVVBox,
-    CVVLabel,
-    CVVText,
-    Expiry,
+  AnimatedCard,
+  CardContainer,
+  CardHolder,
+  CardNumber,
+  CardRow,
+  CardType,
+  CVVBox,
+  CVVLabel,
+  CVVText,
+  Expiry,
 } from "../CheckoutStyles";
 
 type Props = {
@@ -21,13 +21,7 @@ type Props = {
   isFlipped: boolean;
 };
 
-export default function CheckoutCard({
-  cardNumber,
-  cardHolder,
-  expiry,
-  cvv,
-  isFlipped,
-}: Props) {
+export default function CheckoutCard({ cardNumber, cardHolder, expiry, cvv, isFlipped }: Props) {
   const flipAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -62,7 +56,10 @@ export default function CheckoutCard({
   };
 
   const formatCardNumber = (num: string) =>
-    num.replace(/\D/g, "").replace(/(.{4})/g, "$1 ").trim();
+    num
+      .replace(/\D/g, "")
+      .replace(/(.{4})/g, "$1 ")
+      .trim();
 
   return (
     <CardContainer>
