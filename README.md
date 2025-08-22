@@ -64,18 +64,4 @@ npm run ios
 - No se implementó **React Query** por cuestiones de tiempo (el fetching se maneja de forma manual).  
 
 ## 📸 Capturas
-
-### 🟦 Login
-![Login](./assets/screens/login.jpg)
-
-### 💬 Feed inicio
-![Feed](./assets/screens/home.jpg)
-
-### 💬 Feed de comentarios
-![Feed](./assets/screens/feed-comments.jpg)
-
-### 🛒 Productos con filtros
-![Productos](./assets/screens/products.jpg)
-
-### 💳 Checkout con feedback
-![Checkout](./assets/screens/checkout-product.jpg)
+- se encuentar en la carpeta assets/screens
